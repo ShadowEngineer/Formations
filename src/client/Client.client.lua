@@ -36,12 +36,16 @@ function Knit.OnComponentsLoaded()
 	end)
 end
 
-warn("Starting Knit...")
+if Knit.IsStudio then
+	warn("Starting Knit...")
+end
 
 Knit.Start({ ServicePromises = true })
 	:andThen(function()
-		warn("Knit Started Successfully.")
-		warn("Loading Components...")
+		if Knit.IsStudio then
+			warn("Knit started successfully.")
+			warn("Loading components...")
+		end
 
 		for _, module in pairs(Knit.Components:GetDescendants()) do
 			if module:IsA("ModuleScript") then
@@ -49,7 +53,9 @@ Knit.Start({ ServicePromises = true })
 			end
 		end
 
-		warn("Components loaded successfully.")
 		Knit.ComponentsLoaded = true
+		if Knit.IsStudio then
+			warn("Components loaded successfully.")
+		end
 	end)
 	:catch(warn)
