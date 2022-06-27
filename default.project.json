@@ -9,6 +9,9 @@
             },
             "assets": {
                 "$path": "build-files/assets"
+            },
+            "Packages": {
+                "$path": "Packages"
             }
         },
         "ServerScriptService": {
