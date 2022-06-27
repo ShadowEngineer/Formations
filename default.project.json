@@ -39,12 +39,24 @@
             },
             "Packages": {
                 "$path": "Packages"
+            },
+            "Gui": {
+                "$path": "src/gui"
             }
         },
         "ServerScriptService": {
             "$className": "ServerScriptService",
             "Server": {
-                "$path": "src/server"
+                "$path": "src/server/Server.server.lua",
+                "Components": {
+                    "$path": "src/server/Components"
+                },
+                "Services": {
+                    "$path": "src/server/Services"
+                },
+                "Modules": {
+                    "$path": "src/server/Modules"
+                }
             }
         },
         "ServerStorage": {
@@ -56,7 +68,16 @@
             "StarterPlayerScripts": {
                 "$className": "StarterPlayerScripts",
                 "Client": {
-                    "$path": "src/client"
+                    "$path": "src/client/Client.client.lua",
+                    "Components": {
+                        "$path": "src/client/Components"
+                    },
+                    "Controllers": {
+                        "$path": "src/client/Controllers"
+                    },
+                    "Modules": {
+                        "$path": "src/client/Modules"
+                    }
                 }
             }
         },
