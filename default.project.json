@@ -2,6 +2,33 @@
     "name": "Formations",
     "tree": {
         "$className": "DataModel",
+        "Workspace": {
+            "$className": "Workspace",
+            "$path": "build-files/workspace",
+            "$properties": {
+                "FilteringEnabled": true
+            }
+        },
+        "Players": {
+            "$className": "Players",
+            "$properties": {
+                "CharacterAutoLoads": false
+            }
+        },
+        "Lighting": {
+            "$className": "Lighting",
+            "$properties": {
+                "Ambient": [
+                    0,
+                    0,
+                    0
+                ],
+                "Brightness": 2,
+                "GlobalShadows": true,
+                "Outlines": false,
+                "Technology": "Future"
+            }
+        },
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
             "Shared": {
@@ -31,27 +58,6 @@
                 "Client": {
                     "$path": "src/client"
                 }
-            }
-        },
-        "Workspace": {
-            "$className": "Workspace",
-            "$path": "build-files/workspace",
-            "$properties": {
-                "FilteringEnabled": true
-            }
-        },
-        "Lighting": {
-            "$className": "Lighting",
-            "$properties": {
-                "Ambient": [
-                    0,
-                    0,
-                    0
-                ],
-                "Brightness": 2,
-                "GlobalShadows": true,
-                "Outlines": false,
-                "Technology": "Future"
             }
         },
         "SoundService": {
