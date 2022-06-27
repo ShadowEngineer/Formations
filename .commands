@@ -1,0 +1,12 @@
+#!/bin/bash
+import() {
+    remodel -V
+    rm -r build-files
+    remodel run "remodel/import.lua"
+}
+
+build() {
+    rojo -V
+    rojo build -o "build/formations.rbxl" default.project.json
+    start "build/formations.rbxl"
+}

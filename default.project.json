@@ -1,0 +1,61 @@
+{
+    "name": "Formations",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "Shared": {
+                "$path": "src/shared"
+            },
+            "assets": {
+                "$path": "build-files/assets"
+            }
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "Server": {
+                "$path": "src/server"
+            }
+        },
+        "ServerStorage": {
+            "$className": "ServerStorage",
+            "$path": "build-files/storage"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "Client": {
+                    "$path": "src/client"
+                }
+            }
+        },
+        "Workspace": {
+            "$className": "Workspace",
+            "$path": "build-files/workspace",
+            "$properties": {
+                "FilteringEnabled": true
+            }
+        },
+        "Lighting": {
+            "$className": "Lighting",
+            "$properties": {
+                "Ambient": [
+                    0,
+                    0,
+                    0
+                ],
+                "Brightness": 2,
+                "GlobalShadows": true,
+                "Outlines": false,
+                "Technology": "Future"
+            }
+        },
+        "SoundService": {
+            "$className": "SoundService",
+            "$properties": {
+                "RespectFilteringEnabled": true
+            }
+        }
+    }
+}
