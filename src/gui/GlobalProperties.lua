@@ -1,7 +1,7 @@
 return {
 	Colour = {
 		Primary = Color3.fromRGB(255, 255, 255),
-		Secondary = Color3.fromRGB(230, 168, 34),
+		Secondary = Color3.fromRGB(226, 158, 12),
 		Text = {
 			Default = Color3.fromRGB(50, 50, 50),
 			Correct = Color3.fromRGB(0, 255, 0),
@@ -11,6 +11,7 @@ return {
 	Padding = {
 		Interface = 100,
 		Inner = 15,
+		SmallInner = 5,
 	},
 	CornerRadius = UDim.new(0, 15),
 	BorderWidth = 5,
