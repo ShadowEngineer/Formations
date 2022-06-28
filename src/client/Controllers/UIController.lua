@@ -16,7 +16,7 @@ local function App(props)
 end
 
 function UIController:KnitStart()
-	Roact.mount(Roact.createElement(App, GlobalProperties), Knit.Player.PlayerGui)
+	Roact.mount(Roact.createElement(App, { global = GlobalProperties }), Knit.Player.PlayerGui)
 end
 
 function UIController:KnitInit()
