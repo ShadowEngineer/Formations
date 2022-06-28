@@ -2,42 +2,18 @@
     "name": "Formations",
     "tree": {
         "$className": "DataModel",
-        "ReplicatedStorage": {
-            "$className": "ReplicatedStorage",
-            "Shared": {
-                "$path": "src/shared"
-            },
-            "assets": {
-                "$path": "build-files/assets"
-            },
-            "Packages": {
-                "$path": "Packages"
-            }
-        },
-        "ServerScriptService": {
-            "$className": "ServerScriptService",
-            "Server": {
-                "$path": "src/server"
-            }
-        },
-        "ServerStorage": {
-            "$className": "ServerStorage",
-            "$path": "build-files/storage"
-        },
-        "StarterPlayer": {
-            "$className": "StarterPlayer",
-            "StarterPlayerScripts": {
-                "$className": "StarterPlayerScripts",
-                "Client": {
-                    "$path": "src/client"
-                }
-            }
-        },
         "Workspace": {
+            "$ignoreUnknownInstances": true,
             "$className": "Workspace",
             "$path": "build-files/workspace",
             "$properties": {
                 "FilteringEnabled": true
+            }
+        },
+        "Players": {
+            "$className": "Players",
+            "$properties": {
+                "CharacterAutoLoads": false
             }
         },
         "Lighting": {
@@ -52,6 +28,58 @@
                 "GlobalShadows": true,
                 "Outlines": false,
                 "Technology": "Future"
+            }
+        },
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "Shared": {
+                "$path": "src/shared"
+            },
+            "assets": {
+                "$path": "build-files/assets"
+            },
+            "Packages": {
+                "$path": "Packages"
+            },
+            "Gui": {
+                "$path": "src/gui"
+            }
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "Server": {
+                "$path": "src/server/Server.server.lua",
+                "Components": {
+                    "$path": "src/server/Components"
+                },
+                "Services": {
+                    "$path": "src/server/Services"
+                },
+                "Modules": {
+                    "$path": "src/server/Modules"
+                }
+            }
+        },
+        "ServerStorage": {
+            "$className": "ServerStorage",
+            "$path": "build-files/storage"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "Client": {
+                    "$path": "src/client/Client.client.lua",
+                    "Components": {
+                        "$path": "src/client/Components"
+                    },
+                    "Controllers": {
+                        "$path": "src/client/Controllers"
+                    },
+                    "Modules": {
+                        "$path": "src/client/Modules"
+                    }
+                }
             }
         },
         "SoundService": {

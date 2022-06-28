@@ -20,6 +20,7 @@ for _, descendant in pairs(game:GetDescendants()) do
 		or descendant.ClassName == "CoreScript"
 		or descendant.ClassName == "ModuleScript"
 		or descendant.ClassName == "Camera"
+		or descendant.ClassName == "Terrain"
 	then
 		table.insert(toDestroy, descendant)
 	end
