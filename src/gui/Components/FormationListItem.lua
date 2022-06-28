@@ -6,6 +6,21 @@ local Hooks = require(ReplicatedStorage.Packages.Hooks)
 local e = Roact.createElement
 
 local function FormationListItem(props, hooks)
+	local selected, setSelected = Roact.createBinding(false)
+
+	local function compareState(state)
+		if state.formation == props.listing.name then
+			setSelected(true)
+		else
+			setSelected(false)
+		end
+	end
+
+	compareState(props.store:getState())
+	props.store.changed:connect(function(state)
+		compareState(state)
+	end)
+
 	local aliasText = ""
 	if #props.listing.aliases > 0 then
 		aliasText = "<i>"
@@ -26,6 +41,13 @@ local function FormationListItem(props, hooks)
 		BackgroundColor3 = props.global.Colour.Secondary,
 		ClipsDescendants = true,
 	}, {
+		Button = e("ImageButton", {
+			BackgroundTransparency = 1,
+			Size = UDim2.new(1, 0, 1, 0),
+			[Roact.Event.Activated] = function(_button, _InputObject, _clickCount)
+				props.store:dispatch({ type = "formationChanged", newFormationName = props.listing.name })
+			end,
+		}),
 		UICorner = e("UICorner", {
 			CornerRadius = props.global.CornerRadius,
 		}),
@@ -35,7 +57,13 @@ local function FormationListItem(props, hooks)
 			TextStrokeTransparency = 1,
 			TextSize = 25,
 			Font = props.global.Font,
-			TextColor3 = props.global.Colour.Text.Default,
+			TextColor3 = selected:map(function(value)
+				if value == true then
+					return props.global.Colour.Text.Selected
+				else
+					return props.global.Colour.Text.Default
+				end
+			end),
 			Text = "<b>" .. props.listing.name .. "</b>",
 			RichText = true,
 			TextXAlignment = Enum.TextXAlignment.Center,
@@ -76,7 +104,7 @@ local function FormationListItem(props, hooks)
 			Text = props.listing.description,
 			TextTruncate = Enum.TextTruncate.AtEnd,
 			TextWrapped = true,
-			RichText = true,
+			RichText = false,
 			TextXAlignment = Enum.TextXAlignment.Center,
 			TextYAlignment = Enum.TextYAlignment.Top,
 		}),

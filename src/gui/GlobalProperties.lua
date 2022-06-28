@@ -4,6 +4,7 @@ return {
 		Secondary = Color3.fromRGB(226, 158, 12),
 		Text = {
 			Default = Color3.fromRGB(50, 50, 50),
+			Selected = Color3.fromRGB(255, 255, 255),
 			Correct = Color3.fromRGB(0, 255, 0),
 			Incorrect = Color3.fromRGB(255, 0, 0),
 		},
