@@ -64,7 +64,7 @@ local function FormationList(props, _hooks)
 			ShouldValidateInput = true,
 			ValidRange = {
 				Min = 0,
-				Max = 50,
+				Max = 500,
 			},
 		}),
 		FormationList = e(ScrollableList, {
