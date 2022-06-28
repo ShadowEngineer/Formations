@@ -5,6 +5,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Knit = require(ReplicatedStorage.Packages.Knit)
 local Promise = require(ReplicatedStorage.Packages.Promise)
 
+local ColourDummy = require(ReplicatedStorage.Shared.Modules.ColourDummy)
+
 Knit.Components = script.Components
 Knit.Controllers = script.Controllers
 Knit.Modules = script.Modules
@@ -63,6 +65,7 @@ Knit.HostDummy = ReplicatedStorage.assets.rig_white:Clone()
 Knit.HostDummy.Parent = workspace
 Knit.HostDummy.Name = "Commanding Officer"
 Knit.HostDummy:PivotTo(CFrame.new())
+ColourDummy(Knit.HostDummy, Color3.fromRGB(255, 255, 255))
 
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
 
