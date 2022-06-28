@@ -3,6 +3,7 @@
     "tree": {
         "$className": "DataModel",
         "Workspace": {
+            "$ignoreUnknownInstances": true,
             "$className": "Workspace",
             "$path": "build-files/workspace",
             "$properties": {
