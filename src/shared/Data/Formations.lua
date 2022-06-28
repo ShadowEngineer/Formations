@@ -294,16 +294,23 @@ local Formations = {
 		},
 		creator = function(n: number)
 			local list = {}
-			for i = 1, n do
+			for i = 1, n - n % 2 do
 				table.insert(
 					list,
 					CFrame.new(
 						(if NumberUtil.IsOdd(i) then 1 else -1) * X_SPACING_STAGGERED,
 						0,
-						math.floor(i * Z_SPACING / 2)
+						math.ceil(i * Z_SPACING / 2) * 2
+							+ (if NumberUtil.IsEven(i) then -Z_SPACING else 0)
+							+ Z_SPACING / 2
 					)
 				)
 			end
+
+			if n % 2 == 1 then
+				table.insert(list, CFrame.new(0, 0, math.floor(n * Z_SPACING)))
+			end
+
 			return list
 		end,
 	},
@@ -316,16 +323,21 @@ local Formations = {
 		},
 		creator = function(n: number)
 			local list = {}
-			for i = 1, n do
+			for i = 1, n - n % 2 do
 				table.insert(
 					list,
 					CFrame.new(
 						(if NumberUtil.IsOdd(i) then 1 else -1) * X_SPACING_STAGGERED,
 						0,
-						math.floor(i * Z_SPACING / 2) + (if NumberUtil.IsOdd(i) then -1 else 0) * Z_SPACING / 2
+						math.ceil(i * Z_SPACING)
 					)
 				)
 			end
+
+			if n % 2 == 1 then
+				table.insert(list, CFrame.new(0, 0, math.floor(n * Z_SPACING) + 1))
+			end
+
 			return list
 		end,
 	},
