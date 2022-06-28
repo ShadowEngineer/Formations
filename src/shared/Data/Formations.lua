@@ -127,8 +127,13 @@ local Formations = {
 	},
 }
 
+Formations.ById = {}
+Formations.ByName = {}
+
 for _, entry in pairs(Formations) do
 	setmetatable(entry, Defaults)
+	Formations.ById[entry.id] = entry
+	Formations.ByName[entry.name] = entry
 end
 
 return Formations

@@ -55,6 +55,15 @@ end
 
 Knit.RootPart = createRootPart()
 
+Knit.DummyFolder = Instance.new("Folder")
+Knit.DummyFolder.Name = "DummyFolder"
+Knit.DummyFolder.Parent = workspace
+
+Knit.HostDummy = ReplicatedStorage.assets.rig_white:Clone()
+Knit.HostDummy.Parent = workspace
+Knit.HostDummy.Name = "Commanding Officer"
+Knit.HostDummy:PivotTo(CFrame.new())
+
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
 
 if Knit.IsStudio then

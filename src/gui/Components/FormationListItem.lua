@@ -5,7 +5,7 @@ local Hooks = require(ReplicatedStorage.Packages.Hooks)
 
 local e = Roact.createElement
 
-local function FormationListItem(props, hooks)
+local function FormationListItem(props, _hooks)
 	local selected, setSelected = Roact.createBinding(false)
 
 	local function compareState(state)

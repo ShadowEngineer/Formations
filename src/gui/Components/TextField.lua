@@ -9,6 +9,13 @@ function TextField(props, hooks)
 	local textColour, setTextColour = hooks.useState(props.global.Colour.Text.Default)
 	local numberText, setNumberText = hooks.useState(if props.ShouldValidateInput then props.ValidRange.Min else nil)
 
+	hooks.useEffect(function()
+		local state = props.store:getState()
+		if state.guards ~= numberText then
+			props.store:dispatch({ type = "guardsChanged", newGuards = numberText })
+		end
+	end)
+
 	local function validate(text: string): boolean
 		local result = false
 

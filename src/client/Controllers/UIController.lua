@@ -7,16 +7,20 @@ local Gui = ReplicatedStorage.Gui
 local GlobalProperties = require(Gui.GlobalProperties)
 local FormationList = require(Gui.App.FormationList)
 
+local e = Roact.createElement
+
 local UIController = Knit.CreateController({ Name = "UIController" })
 
-local function App(props)
-	return Roact.createElement("ScreenGui", props, {
-		FormationList = FormationList,
+local function App(_props)
+	return Roact.createElement("ScreenGui", nil, {
+		FormationList = e(FormationList, {
+			global = GlobalProperties,
+		}),
 	})
 end
 
 function UIController:KnitStart()
-	Roact.mount(Roact.createElement(App, { global = GlobalProperties }), Knit.Player.PlayerGui)
+	Roact.mount(e(App, nil), Knit.Player.PlayerGui)
 end
 
 function UIController:KnitInit()

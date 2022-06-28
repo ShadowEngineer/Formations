@@ -8,6 +8,7 @@ local ScrollableList = require(ReplicatedStorage.Gui.Components.ScrollableList)
 local FormationListItem = require(ReplicatedStorage.Gui.Components.FormationListItem)
 
 local FormationData = require(ReplicatedStorage.Shared.Data.Formations)
+local FormationHandler = require(ReplicatedStorage.Shared.Modules.FormationHandler)
 
 local e = Roact.createElement
 
@@ -28,6 +29,11 @@ local function FormationList(props, _hooks)
 		guards = 0,
 		formation = FormationData[1].name,
 	})
+
+	props.store.changed:connect(function(newState, _oldState)
+		FormationHandler.ClearFormation()
+		FormationHandler.CreateFormation(newState.formation, newState.guards)
+	end)
 
 	local formationListings = {}
 
