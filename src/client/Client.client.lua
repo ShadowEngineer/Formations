@@ -1,4 +1,5 @@
 local RunService = game:GetService("RunService")
+local StarterGui = game:GetService("StarterGui")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Knit = require(ReplicatedStorage.Packages.Knit)
@@ -35,6 +36,26 @@ function Knit.OnComponentsLoaded()
 		end)
 	end)
 end
+
+local function createRootPart()
+	local newPart = Instance.new("Part")
+	newPart.Name = "RootPart"
+	newPart.Anchored = true
+
+	if Knit.IsStudio then
+		newPart.Transparency = 0.5
+		newPart.Color = Color3.fromRGB(125, 0, 0)
+	else
+		newPart.Transparency = 1
+	end
+
+	newPart.Parent = workspace
+	return newPart
+end
+
+Knit.RootPart = createRootPart()
+
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
 
 if Knit.IsStudio then
 	warn("Starting Knit...")
