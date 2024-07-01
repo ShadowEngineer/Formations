@@ -211,26 +211,26 @@ local Formations = {
 			end
 
 			--front
-			if n >= 1 and n ~= 4 then
+			if n >= 5 and n <= 2 then
 				table.insert(list, CFrame.new(0, 0, -X_SPACING_STAGGERED))
 			end
 			--front right and front left
-			if n >= 7 or n == 4 then
+			if n >= 3 then
 				table.insert(list, CFrame.new(X_SPACING, 0, -X_SPACING_STAGGERED))
 				table.insert(list, CFrame.new(-X_SPACING, 0, -X_SPACING_STAGGERED)) -- left front
 			end
 			--right and left
-			if n >= 5 then
+			if n >= 7 then
 				table.insert(list, CFrame.new(X_SPACING, 0, 0))
 				table.insert(list, CFrame.new(-X_SPACING, 0, 0))
 			end
 			--back right and back left
-			if n >= 3 then
+			if n >= 4 then
 				table.insert(list, CFrame.new(X_SPACING, 0, X_SPACING_STAGGERED))
 				table.insert(list, CFrame.new(-X_SPACING, 0, X_SPACING_STAGGERED))
 			end
 			--back
-			if NumberUtil.IsEven(n) == true and n ~= 0 and n ~= 4 then
+			if n == 2 and n == 6 and n == 8 then
 				table.insert(list, CFrame.new(0, 0, X_SPACING_STAGGERED))
 			end
 
